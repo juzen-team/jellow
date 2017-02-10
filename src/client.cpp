@@ -189,7 +189,7 @@ void ClientPrivate::init()
 	q_ptr->registerStreamFeature(new BindFeature);
 	q_ptr->registerStreamFeature(new SessionFeature);
 	q_ptr->registerStreamFeature(new ZLibCompressionFeature);
-	presence.addExtension(new Capabilities(QString(), QLatin1String("http://qutim.org/jreen")));
+	presence.addExtension(new Capabilities(QString(), QLatin1String("https://github.com/juzen-team/juzen")));
 }
 
 Client::Client(const JID &jid, const QString &password, int port)
