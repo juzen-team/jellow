@@ -118,6 +118,15 @@ Q_INLINE_TEMPLATE T payload_cast(Payload *se)
 }
 
 template <typename T>
+Q_INLINE_TEMPLATE QSharedPointer<T> payload_cast(Jreen::Payload::Ptr &sp)
+{
+    auto se = sp.data();
+	if (se && reinterpret_cast<T*>(0)->staticPayloadType() == se->payloadType())
+		return sp.staticCast<T>();
+	return QSharedPointer<T>();
+}
+
+template <typename T>
 Q_INLINE_TEMPLATE T se_cast(Payload *se)
 {
 	return payload_cast<T>(se);
