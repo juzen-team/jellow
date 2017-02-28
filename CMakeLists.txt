@@ -199,7 +199,11 @@ target_link_libraries(jreen${JREEN_SUFFIX}
     ${EXTRA_LIBS}
 )
 
-set_target_properties(jreen${JREEN_SUFFIX} PROPERTIES AUTOMOC TRUE)
+set_target_properties(jreen${JREEN_SUFFIX} PROPERTIES
+        AUTOMOC TRUE
+        CXX_STANDARD 14
+        CXX_STANDARD_REQUIRED ON
+        CXX_EXTENSIONS OFF)
 qt5_use_modules(jreen${JREEN_SUFFIX} Core Network)
 
 # Install package config file
